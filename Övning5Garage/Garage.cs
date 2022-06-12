@@ -47,6 +47,7 @@ namespace Övning5Garage
         // Garage konstruktorn tar kapaciteten för arrayen
         public Garage(int capacity)
         {
+            // Här används Math.Max(capacity, 2). Om användaren sätter en capacitet under 2 så kommer kapaciteten sättas till ett default värde av 2 istället.
             _capacity = Math.Max(capacity, 2);
             _array = new T[_capacity];
         }

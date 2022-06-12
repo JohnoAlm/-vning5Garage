@@ -36,7 +36,14 @@ namespace Övning5Garage
             _ui.Print("Welcome to your garage!");
             _ui.Print("\nPlease create the new garage by entering an amount of parking spaces\n");
             int capacity = Util.AskForInt("Parking spaces", _ui);
-            _ui.Print($"\nGarage created successfully with {capacity} parking spaces!");
+            if(capacity < 2)
+            {
+                _ui.Print("You can't set the amount of parking spaces below 2! A default value of 2 parking spaces has been set");
+            }
+            else
+            {
+                _ui.Print($"\nGarage created successfully with {capacity} parking spaces!");
+            }
             IHandler handler = new Handler(capacity);
             return handler;
         }
